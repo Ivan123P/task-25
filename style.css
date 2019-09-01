@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#start-game {
+  margin-bottom: 30px;
+}
+
+#game-body {
+  position: relative;
+  width: 300px;
+  height: 290px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-bottom-color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+#bullet {
+  position: absolute;
+  top: 274px;
+  left: 148px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+}
+
+#platform {
+  position: absolute;
+  top: 288px;
+  left: 126px;
+  width: 60px;
+  height: 2px;
+  background-color: #000;
+}
