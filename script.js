@@ -22,6 +22,10 @@ $(document).ready(function() {
   const intervalTime = 30;
 
   $('#start-game').on('click', function() {
+    $.each(intervals, function() {
+      clearInterval(this);
+    });
+
     startGame();
   });
 
@@ -49,10 +53,7 @@ $(document).ready(function() {
   function startGame() {
     bullet.css('top', bulletStartY);
     bullet.css('left', bulletStartX);
-
-    $.each(intervals, function() {
-      clearInterval(this);
-    });
+    console.log(intervals);
 
     if(velocityY > 0) {
       velocityY = -velocityY;
@@ -64,8 +65,13 @@ $(document).ready(function() {
     let timerId = setInterval(() => {
       if( bullet.position().top < gameBodyHeight ) {
         setPosition();
+      } else {
+        $.each(intervals, function() {
+          clearInterval(this);
+        });
       }
     }, intervalTime);
+
     intervals.push(timerId);
   };
 
