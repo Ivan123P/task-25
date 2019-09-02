@@ -53,7 +53,6 @@ $(document).ready(function() {
   function startGame() {
     bullet.css('top', bulletStartY);
     bullet.css('left', bulletStartX);
-    console.log(intervals);
 
     if(velocityY > 0) {
       velocityY = -velocityY;
@@ -66,9 +65,7 @@ $(document).ready(function() {
       if( bullet.position().top < gameBodyHeight ) {
         setPosition();
       } else {
-        $.each(intervals, function() {
-          clearInterval(this);
-        });
+        clearInterval(timerId);
       }
     }, intervalTime);
 
